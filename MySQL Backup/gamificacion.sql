@@ -38,15 +38,6 @@ CREATE TABLE IF NOT EXISTS `comentario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `comentario`
---
-
-INSERT INTO `comentario` (`autor`, `idrequisito`, `contenido`, `resuelto`) VALUES
-('admin', 'RF-001', 'Resuelveme', 0),
-('dani', 'RNF-002', 'Y mi primer comentario', 0),
-('luis', 'RF-002', 'Probando incremento de puntos', 1);
-
---
 -- Disparadores `comentario`
 --
 DROP TRIGGER IF EXISTS `PrimerComentario`;
@@ -75,17 +66,6 @@ CREATE TABLE IF NOT EXISTS `logro` (
   KEY `id_2` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Contiene los distintos logros ' AUTO_INCREMENT=7 ;
 
---
--- Volcado de datos para la tabla `logro`
---
-
-INSERT INTO `logro` (`id`, `titulo`, `descripcion`) VALUES
-(1, 'Primer Requisito', 'El logro se desbloquea cuando aportas el primer requisito al sistema.'),
-(2, 'Primer Comentario', 'El logro se desbloquea cuando aportas tu primer comentario a un requisito del sistema.'),
-(3, 'Principiante', 'Obtén 10 puntos en el sistema.'),
-(4, 'Profesional', 'Obtén 100 puntos en el sistema.'),
-(5, 'Inhumano', 'Obtén 1000 puntos en el sistema.');
-
 -- --------------------------------------------------------
 
 --
@@ -99,23 +79,6 @@ CREATE TABLE IF NOT EXISTS `logrouser` (
   KEY `logro` (`idLogro`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Almacena todos los logros de todos los usuarios.';
 
---
--- Volcado de datos para la tabla `logrouser`
---
-
-INSERT INTO `logrouser` (`idUser`, `idLogro`) VALUES
-('luis', 1),
-('admin', 1),
-('victor', 1),
-('admin', 2),
-('dani', 2),
-('luis', 2),
-('dani', 3),
-('luis', 3),
-('victor', 3),
-('luis', 4),
-('victor', 4),
-('luis', 5);
 
 -- --------------------------------------------------------
 
@@ -135,15 +98,6 @@ CREATE TABLE IF NOT EXISTS `requisito` (
   KEY `autor` (`autor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabla para alojar requisitos';
 
---
--- Volcado de datos para la tabla `requisito`
---
-
-INSERT INTO `requisito` (`id`, `titulo`, `prioridad`, `impacto`, `dependencias`, `descripcion`, `autor`) VALUES
-('RF-001', 'Requisito de prueba', 1, 2, 'RF-003', 'Este requisito es una prueba para comprobar el acceso a la base de datos.', 'luis'),
-('RF-002', 'Segundo requisito', 3, 1, '', 'Este es el segundo requisito. Además está editado.', 'admin'),
-('RNF-001', 'No funcional', 1, 0, '', 'Este es un requisito no funcional', 'luis'),
-('RNF-002', 'Requisito de victor', 1, 1, '', 'Mi primer requisito', 'victor');
 
 --
 -- Disparadores `requisito`
@@ -174,17 +128,6 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `admin` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Representa a los usuarios del sistema';
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`user`, `password`, `nombre`, `apellido`, `puntos`, `admin`) VALUES
-('admin', 'admin', 'Administrador', '', 5, 1),
-('dani', '1234', 'Daniel', 'Domínguez', 17, 0),
-('david', '1234', 'David', 'Cañamares', 6, 0),
-('luis', '1234', 'Luis Alberto', 'Santos', 1003, 0),
-('victor', '1234', 'Victor Manuel', 'Valle', 107, 0);
 
 --
 -- Disparadores `usuario`
