@@ -126,6 +126,7 @@
 													<div class="3u"><span class="fuerte">Prioridad: </span><span class="prioridad"><?php echo $row['prioridad'];?></span></div><div class="3u"><span class="fuerte">Impacto: </span><span class="impacto"><?php echo $row['impacto'];?></span></div> <div class="6u"><span class="fuerte">Dependencias: </span><span class="dependencias"><?php echo $row['dependencias'];?></span></div>
 													<div class="12u"><span class="fuerte">Descripción: </span><span class="descripcion"><?php echo $row['descripcion'];?></span></div>
 												</form>
+												<div class="clear"></div>
 												<div class="comment" style="display:none;">
 													<?php
 													$sql2 = "SELECT * FROM comentario WHERE idrequisito = '" . $row['id'] . "'";
