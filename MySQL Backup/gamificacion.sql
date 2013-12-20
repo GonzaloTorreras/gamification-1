@@ -66,6 +66,17 @@ CREATE TABLE IF NOT EXISTS `logro` (
   KEY `id_2` (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Contiene los distintos logros ' AUTO_INCREMENT=7 ;
 
+--
+-- Volcado de datos para la tabla `logro`
+--
+
+INSERT INTO `logro` (`id`, `titulo`, `descripcion`) VALUES
+(1, 'Primer Requisito', 'El logro se desbloquea cuando aportas el primer requisito al sistema.'),
+(2, 'Primer Comentario', 'El logro se desbloquea cuando aportas tu primer comentario a un requisito del sistema.'),
+(3, 'Principiante', 'Obtén 10 puntos en el sistema.'),
+(4, 'Profesional', 'Obtén 100 puntos en el sistema.'),
+(5, 'Inhumano', 'Obtén 1000 puntos en el sistema.');
+
 -- --------------------------------------------------------
 
 --
