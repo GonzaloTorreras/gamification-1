@@ -1180,6 +1180,13 @@
 .logro:hover > div {
     display: block
 }
+.contenedorReq{
+	position:relative;
+	margin:10px;
+}
+.comment{
+	display:none;
+}
 
 /*********************************************************************************/
 /* Footer                                                                        */

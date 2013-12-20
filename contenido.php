@@ -111,8 +111,8 @@
 									$recordset->data_seek(0);
 									while($row = $recordset->fetch_assoc()){
 									?>
-									<div class="row">
-										<div style="position:relative;" class="container 6u">
+									<div class="container 6u">
+										<div class="contenedorReq">
 											<span class="fa fa-comment"></span>
 											<?php
 											//Si somos los autores, mostramos el icono de edición
@@ -127,7 +127,7 @@
 													<div class="12u"><span class="fuerte">Descripción: </span><span class="descripcion"><?php echo $row['descripcion'];?></span></div>
 												</form>
 												<div class="clear"></div>
-												<div class="comment" style="display:none;">
+												<div class="comment">
 													<?php
 													$sql2 = "SELECT * FROM comentario WHERE idrequisito = '" . $row['id'] . "'";
 													
@@ -190,6 +190,7 @@
 												</div>
 												<div class="clear"></div>
 											</article>
+											
 										</div>							
 									</div>
 									<?php
@@ -198,7 +199,7 @@
 							}
 							$recordset->free(); //Liberamos el resultado
 							?>
-							
+							<div class="clear"></div>
 							<a id="btnAdd" class="button add">Añadir un Requisito</a>
 							
 							<div id="addReq">
